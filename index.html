@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elphas Wanyonyi | Portfolio</title>
+  <title>Elphas Wanyonyi | Software Developer Portfolio</title>
   
   <!-- SEO -->
-  <meta name="description" content="Portfolio of Elphas Wanyonyi - Customer Care Agent,Software Developer, Full stack Developer,IT Technician& AI Enthusiast in Nairobi, Kenya.">
-  <meta name="keywords" content="Elphas Wanyonyi,Customer Care Agent,Software Developer,Full Stack Developer,Customer Service Specialist, AI, Portfolio, Nairobi">
+  <meta name="description" content="Portfolio of Elphas Wanyonyi - Software Developer, Full Stack Developer, IT Technician & AI Enthusiast in Nairobi, Kenya.">
+  <meta name="keywords" content="Elphas Wanyonyi,Software Developer,Full Stack Developer,AI,Portfolio,Projects,Nairobi">
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,433 +23,244 @@
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
+      background-color: #f8f9fa;
+      color: #343a40;
+      scroll-behavior: smooth;
     }
-  /* Profile Image Styling */
+
+    /* Profile Image Styling */
     .profile-img {
       width: 180px;
       height: 180px;
       max-width: 100%;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #007bff;
+      border: 4px solid var(--primary-color);
       display: block;
       margin: 0 auto 20px;
     }
 
-    /* Hero Section */
-    #hero {
-      background: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
-      height: 100vh;
-      color: white;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-    #hero h1, #hero p {
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+    /* Section styling */
+    section {
+      padding: 60px 0;
     }
 
-    /* Navbar */
-    .navbar {
-      background: rgba(0,0,0,0.8);
-    }
-    .navbar a {
-      color: white !important;
+    h2 {
+      color: var(--primary-color);
+      margin-bottom: 30px;
     }
 
-    /* About Image */
-    #about img {
-      border-radius: 50%;
-      border: 4px solid var(--primary-color);
-      box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+    /* Project cards */
+    .project-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
     }
 
-    /* Skills */
-    .progress-bar {
-      font-weight: bold;
-    }
-
-    /* Projects */
-    .card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover {
+    .project-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
 
-    /* Footer */
-    footer {
-      background: #222;
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .skills-list i {
+      font-size: 24px;
+      margin-right: 10px;
+      color: var(--primary-color);
+    }
+
+    /* Hero header buttons */
+    .hero-btns .btn {
+      min-width: 150px;
+    }
+
+    /* Back to Top Button */
+    #back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      display: none;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: var(--primary-color);
       color: white;
-      text-align: center;
-      padding: 20px 0;
+      cursor: pointer;
+      padding: 10px 15px;
+      border-radius: 50px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+      transition: background-color 0.3s;
     }
 
-    /* Responsive */
-    img {
-      max-width: 100%;
-      height: auto;
+    #back-to-top:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg fixed-top">
-  <div class="container">
-    <a class="navbar-brand text-white fw-bold" href="#">Elphas Wanyonyi</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
+  <!-- Hero / Header -->
+  <header class="text-center py-5 bg-light shadow-sm">
+    <img src="profile.jpg" alt="Elphas Wanyonyi" class="profile-img mb-3">
+    <h1 class="mb-2">Elphas Wanyonyi</h1>
+    <p class="lead mb-2">Full Stack Developer | AI Enthusiast | Building Scalable Web & Mobile Applications</p>
+    <p class="text-muted mb-3">Nairobi, Kenya</p>
+
+    <!-- Call-to-action buttons -->
+    <div class="d-flex justify-content-center gap-2 flex-wrap hero-btns">
+      <a href="#projects" class="btn btn-primary btn-lg"><i class="fas fa-code"></i> View My Projects</a>
+      <a href="mailto:mulongoelphas97@gmail.com" class="btn btn-outline-primary btn-lg"><i class="fas fa-envelope"></i> Contact Me</a>
+      <a href="https://github.com/yourusername" target="_blank" class="btn btn-dark btn-lg"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://linkedin.com/in/elphas-wanyonyi-436005190" target="_blank" class="btn btn-info btn-lg text-white"><i class="fab fa-linkedin"></i> LinkedIn</a>
     </div>
-  </div>
-</nav>
 
-<!-- Hero -->
-<section id="hero">
-  <h1>Hi, I'm Elphas Wanyonyi</h1>
-  <p>Customer Care Specialist | Delivering Exceptional Support & Happy Users</p>
-  <a href="#contact" class="btn btn-primary mt-3">Open to Opportunities
-</a>
-</section>
-
-<!-- About -->
-<section id="about" class="container py-5">
-  <div class="row align-items-center">
-    <div class="col-md-4 text-center">
-      <img src="https://raw.githubusercontent.com/Elphazy/elphazy.github.io/main/New Profile picture.png" alt="Elphas Wanyonyi" class="img-fluid">
+    <!-- Highlight skills below hero -->
+    <div class="mt-4">
+      <span class="badge bg-primary me-1">JavaScript</span>
+      <span class="badge bg-success me-1">Node.js</span>
+      <span class="badge bg-info text-dark me-1">React.js</span>
+      <span class="badge bg-warning text-dark me-1">PHP</span>
+      <span class="badge bg-secondary me-1">Python</span>
+      <span class="badge bg-dark me-1">Full Stack Development</span>
     </div>
-    <div class="col-md-8">
-      <h2>About Me</h2>
-      <p>I’m a Customer Care Specialist with 3+ years of experience delivering exceptional support at CashNow, Zash, and Lioncash (2021–2024). I solve problems efficiently, build strong user relationships, and enhance client satisfaction. With software skills in JavaScript, React, Node.js, Python, PHP, SQL, and Bootstrap, I understand technical products and provide smarter, more effective support
- </p>
-    </div>
-  </div>
-</section>
+  </header>
 
-  </div>
-</section>
-
-<!-- Skills Section -->
-<section id="skills" class="bg-light py-5">
-  <div class="container">
-    <h2 class="text-center mb-5">Skills</h2>
-    
-    <div class="row">
-      
-      <!-- Customer Care & Soft Skills -->
-      <div class="col-md-6 mb-4">
-        <h4 class="mb-3">💼 Customer Care & Soft Skills</h4>
-        <p>Problem Solving</p>
-        <div class="progress mb-2">
-          <div class="progress-bar bg-success" style="width: 95%"></div>
-        </div>
-        <p>Communication & Active Listening</p>
-        <div class="progress mb-2">
-          <div class="progress-bar bg-success" style="width: 95%"></div>
-        </div>
-        <p>Client Relationship Building</p>
-        <div class="progress mb-2">
-          <div class="progress-bar bg-success" style="width: 90%"></div>
-        </div>
-        <p>Adaptability & Conflict Resolution</p>
-        <div class="progress mb-2">
-          <div class="progress-bar bg-success" style="width: 90%"></div>
-        </div>
-        <p>Team Collaboration</p>
-        <div class="progress mb-2">
-          <div class="progress-bar bg-success" style="width: 85%"></div>
-        </div>
-      </div>
-
-      <!-- Customer Support Tools -->
-      <div class="col-md-6 mb-4">
-        <h4 class="mb-3">🛠️ Customer Support Tools</h4>
-        <p>CRM Systems (Zendesk, Salesforce)</p>
-        <div class="progress mb-2">
-          <div class="progress-bar bg-info" style="width: 85%"></div>
-        </div>
-        <p>Email & Live Chat Support</p>
-        <div class="progress mb-2">
-          <div class="progress-bar bg-info" style="width: 90%"></div>
-        </div>
-        <p>Issue Tracking & Ticket Management</p>
-        <div class="progress mb-2">
-          <div class="progress-bar bg-info" style="width: 85%"></div>
-        </div>
-        <p>Slack & Trello Collaboration</p>
-        <div class="progress mb-2">
-          <div class="progress-bar bg-info" style="width: 80%"></div>
-        </div>
-      </div>
-
-      <!-- Technical Skills (Secondary) -->
-      <div class="col-md-6 mb-4">
-        <h4 class="mb-3">💻 Technical Skills</h4>
-        <p>HTML5 & CSS3</p>
-        <div class="progress mb-2">
-          <div class="progress-bar bg-warning" style="width: 80%"></div>
-        </div>
-        <p>JavaScript (ES6+)</p>
-        <div class="progress mb-2">
-          <div class="progress-bar bg-warning" style="width: 75%"></div>
-        </div>
-        <p>Node.js & Python</p>
-        <div class="progress mb-2">
-          <div class="progress-bar bg-warning" style="width: 70%"></div>
-        </div>
-        <p>PHP & Bootstrap</p>
-        <div class="progress mb-2">
-          <div class="progress-bar bg-warning" style="width: 70%"></div>
-        </div>
-        <p>SQL & MongoDB</p>
-        <div class="progress mb-2">
-          <div class="progress-bar bg-warning" style="width: 65%"></div>
-        </div>
-      </div>
-
-      <!-- Achievements / Highlights -->
-      <div class="col-md-6 mb-4">
-        <h4 class="mb-3">🏆 Highlights</h4>
-        <ul class="list-unstyled">
-          <li>✅ Resolved 1000+ customer queries efficiently</li>
-          <li>✅ Improved response time and customer satisfaction scores</li>
-          <li>✅ Supported tech product users with clear guidance</li>
-          <li>✅ Collaborated with remote teams across multiple platforms</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
+  <!-- About Me -->
+  <section id="about" class="container">
+    <h2>About Me</h2>
+    <p>Hello! I'm <strong>Elphas Wanyonyi</strong>, a passionate Software Developer with experience in building web and mobile applications using JavaScript, Node.js, PHP, and Python. I specialize in full-stack development, AI integrations, and creating scalable solutions. I enjoy solving technical challenges and bringing impactful projects to life.</p>
   </section>
 
-<!-- Projects Section -->
-       <!-- ================= CUSTOMER CARE SOLUTIONS ================= -->
-<section id="customer-care-projects" class="py-5 bg-light">
-  <div class="container">
-    <h2 class="text-center mb-4">
-      <i class="fas fa-headset text-primary"></i> Customer Care Solutions
-    </h2>
-    <p class="text-center text-muted mb-5">
-      Projects focused on enhancing customer support, improving response times, and boosting client satisfaction.
-    </p>
-    <div class="row">
-
-      <!-- Customer Support Dashboard -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm project-card">
-          <img src="https://raw.githubusercontent.com/Elphazy/elphazy.github.io/main/customersupportdashboard.png" class="card-img-top" alt="Customer Support Dashboard">
-          <div class="card-body">
-            <h5 class="card-title">Customer Support Dashboard</h5>
-            <p class="card-text">
-              Designed a dashboard for customer service teams to log, track, and resolve client issues. Enhanced response time and improved satisfaction reporting.
-            </p>
-          </div>
-          <div class="mb-2">
-            <span class="badge bg-warning text-dark">JavaScript</span>
-            <span class="badge bg-info text-dark">React</span>
-            <span class="badge bg-primary">Node.js</span>
-            <span class="badge bg-success">SQL</span>
-          </div>
-          <div class="card-footer d-flex justify-content-between">
-            <a href="#" target="_blank" class="btn btn-sm btn-primary">
-              <i class="fab fa-github"></i> Code
-            </a>
-            <a href="#" class="btn btn-sm btn-outline-secondary disabled">
-              <i class="fas fa-external-link-alt"></i> Live Demo
-            </a>
-          </div>
-        </div>
+  <!-- Skills -->
+  <section id="skills" class="bg-white">
+    <div class="container">
+      <h2>Technical Skills</h2>
+      <div class="d-flex flex-wrap skills-list gap-3">
+        <i class="fab fa-js-square" title="JavaScript"></i>
+        <i class="fab fa-node" title="Node.js"></i>
+        <i class="fab fa-php" title="PHP"></i>
+        <i class="fab fa-python" title="Python"></i>
+        <i class="fab fa-react" title="React.js"></i>
+        <i class="fas fa-database" title="SQL / Databases"></i>
+        <i class="fab fa-git-alt" title="Git / Version Control"></i>
+        <i class="fab fa-bootstrap" title="Bootstrap"></i>
       </div>
-
-      <!-- Real-Time Chat Support -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm project-card">
-          <img src="https://raw.githubusercontent.com/Elphazy/elphazy.github.io/main/csd.png" class="card-img-top" alt="Real-Time Chat Support Tool">
-          <div class="card-body">
-            <h5 class="card-title">Real-Time Chat Support</h5>
-            <p class="card-text">
-              Developed a live chat platform enabling real-time communication between support agents and customers. Boosted issue resolution rate by 30%.
-            </p>
-          </div>
-          <div class="mb-2">
-            <span class="badge bg-primary">Node.js</span>
-            <span class="badge bg-success">Socket.io</span>
-            <span class="badge bg-info text-dark">Bootstrap</span>
-            <span class="badge bg-dark">MongoDB</span>
-          </div>
-          <div class="card-footer d-flex justify-content-between">
-            <a href="#" target="_blank" class="btn btn-sm btn-primary">
-              <i class="fab fa-github"></i> Code
-            </a>
-            <a href="#" class="btn btn-sm btn-outline-secondary disabled">
-              <i class="fas fa-external-link-alt"></i> Live Demo
-            </a>
-          </div>
-        </div>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
+  <!-- Projects -->
+  <section id="projects" class="container">
+    <h2>Projects</h2>
+    <div class="row g-4">
 
-<!-- ================= SOFTWARE DEVELOPMENT PROJECTS ================= -->
-<section id="software-projects" class="py-5">
-  <div class="container">
-    <h2 class="text-center mb-4">
-      <i class="fas fa-laptop-code text-success"></i> Software Development Projects
-    </h2>
-    <p class="text-center text-muted mb-5">
-      A showcase of applications and systems built to solve real-world problems and improve user experiences.
-    </p>
-    <div class="row">
+      <!-- Real-Time Venue Booking -->
+      <div class="col-md-4">
+        <div class="project-card">
+          <img src="realtime-venue.jpg" alt="Real-Time Venue Booking">
+          <div class="p-3">
+            <h5>Real-Time Venue Booking</h5>
+            <p>A web application that allows users to book venues in real-time, with availability checking, booking confirmation, and notifications.</p>
+            <div class="mb-2">
+              <span class="badge bg-primary">React.js</span>
+              <span class="badge bg-success">Node.js</span>
+              <span class="badge bg-info text-dark">Firebase</span>
+            </div>
+            <a href="https://github.com/yourusername/realtime-venue" target="_blank" class="btn btn-outline-primary btn-sm me-2"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" class="btn btn-sm btn-outline-secondary disabled" title="Live Demo will be available soon"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
+        </div>
+      </div>
 
       <!-- VenueMaster -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm project-card">
-          <img src="https://raw.githubusercontent.com/Elphazy/elphazy.github.io/main/Availablevenue.png" 
-               class="card-img-top" 
-               alt="Available venues listing in VenueMaster desktop app showing venue details">
-          <div class="card-body">
-            <h5 class="card-title">VenueMaster</h5>
-            <p class="card-text">
-              Built a Tkinter & SQLite venue booking system to streamline event reservations. Improved efficiency by automating scheduling, tracking, and reporting.
-            </p>
-          </div>
-          <div class="mb-2">
-            <span class="badge bg-primary">Python</span>
-            <span class="badge bg-dark">Django</span>
-            <span class="badge bg-info text-dark">Chart.js</span>
-            <span class="badge bg-success">PostgreSQL</span>
-          </div>
-          <div class="card-footer d-flex justify-content-between">
-            <a href="https://github.com/Elphazy/tk-venue-booking-" target="_blank" class="btn btn-sm btn-primary">
-              <i class="fab fa-github"></i> Code
-            </a>
-            <a href="#" class="btn btn-sm btn-outline-secondary disabled" title="Live Demo will be available soon">
-              <i class="fas fa-external-link-alt"></i> Live Demo
-            </a>
+      <div class="col-md-4">
+        <div class="project-card">
+          <img src="venuemaster.jpg" alt="VenueMaster">
+          <div class="p-3">
+            <h5>VenueMaster</h5>
+            <p>An end-to-end venue management system supporting listings, reservations, customer management, and admin dashboards.</p>
+            <div class="mb-2">
+              <span class="badge bg-primary">PHP</span>
+              <span class="badge bg-success">MySQL</span>
+              <span class="badge bg-warning text-dark">Bootstrap</span>
+            </div>
+            <a href="https://github.com/yourusername/venuemaster" target="_blank" class="btn btn-outline-primary btn-sm me-2"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" class="btn btn-sm btn-outline-secondary disabled" title="Live Demo will be available soon"><i class="fas fa-external-link-alt"></i> Live Demo</a>
           </div>
         </div>
       </div>
 
-      <!-- Real-Time Booking App -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm project-card">
-          <img src="https://raw.githubusercontent.com/Elphazy/elphazy.github.io/main/realtimebookingimage1.png" class="card-img-top" alt="Real-Time Booking App">
-          <div class="card-body">
-            <h5 class="card-title">Real-Time Booking App</h5>
-            <p class="card-text">
-              Developed a responsive web app that lets users search and reserve venues in real-time, boosting efficiency and customer satisfaction.
-            </p>
-          </div>
-          <div class="mb-2">
-            <span class="badge bg-primary">PHP</span>
-            <span class="badge bg-info text-dark">Bootstrap</span>
-            <span class="badge bg-success">MySQL</span>
-          </div>
-          <div class="card-footer d-flex justify-content-between">
-            <a href="#" target="_blank" class="btn btn-sm btn-primary">
-              <i class="fab fa-github"></i> Code
-            </a>
-            <a href="#" class="btn btn-sm btn-outline-secondary disabled">
-              <i class="fas fa-external-link-alt"></i> Live Demo
-            </a>
+      <!-- AI Chatbot -->
+      <div class="col-md-4">
+        <div class="project-card">
+          <img src="ai-chatbot.jpg" alt="AI Chatbot">
+          <div class="p-3">
+            <h5>AI Chatbot</h5>
+            <p>An intelligent chatbot using Python and NLP libraries to assist users with FAQs and automate customer support processes.</p>
+            <div class="mb-2">
+              <span class="badge bg-primary">Python</span>
+              <span class="badge bg-info text-dark">NLP</span>
+              <span class="badge bg-success">Flask</span>
+            </div>
+            <a href="https://github.com/yourusername/ai-chatbot" target="_blank" class="btn btn-outline-primary btn-sm me-2"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" class="btn btn-sm btn-outline-secondary disabled" title="Live Demo will be available soon"><i class="fas fa-external-link-alt"></i> Live Demo</a>
           </div>
         </div>
       </div>
 
     </div>
-  </div>
-</section>   
-<!-- Extra CSS for hover effect -->
-<style>
-  .project-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 12px;
-    overflow: hidden;
-  }
-  .project-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
-  }
-  .card-img-top {
-    height: 200px;
-    object-fit: cover;
-  }
-</style>
+  </section>
 
-
-<!-- Extra CSS for hover effect -->
-<style>
-  .project-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 12px;
-    overflow: hidden;
-  }
-  .project-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
-  }
-  .card-img-top {
-    height: 200px;
-    object-fit: cover;
-  }
-</style>
-
-<!-- Resume -->
-<section id="resume" class="bg-light py-5">
-  <div class="container text-center">
-    <h2>Resume</h2>
-    <p>You can download my updated CV here:</p>
-    <a href="assets/cv/Elphas_Wanyonyi_CV.pdf" class="btn btn-primary">Download CV</a>
-  </div>
-</section>
-
-<!-- Contact -->
-<section id="contact" class="container py-5">
-  <h2 class="text-center mb-4">Contact Me</h2>
-  <form action="https://formspree.io/f/yourFormID" method="POST" class="col-md-8 mx-auto">
-    <div class="mb-3">
-      <label>Name</label>
-      <input type="text" class="form-control" name="name" required>
+  <!-- Contact -->
+  <section id="contact" class="bg-white text-center">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <p>If you’d like to work together or discuss a project, feel free to reach out!</p>
+      <a href="mailto:mulongoelphas97@gmail.com" class="btn btn-primary btn-lg"><i class="fas fa-envelope"></i> Send Email</a>
     </div>
-    <div class="mb-3">
-      <label>Email</label>
-      <input type="email" class="form-control" name="email" required>
-    </div>
-    <div class="mb-3">
-      <label>Message</label>
-      <textarea class="form-control" name="message" rows="5" required></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Send</button>
-  </form>
-</section>
+  </section>
 
-<!-- Footer -->
-<footer>
-  <p>© 2025 Elphas Wanyonyi | All Rights Reserved</p>
-  <div>
-   <a href="https://github.com/Elphazy" target="_blank" class="text-white me-3">
-   <i class="fab fa-github fa-2x"></i>
-</a>
-    <a href="https://linkedin.com/in/elphas-wanyonyi-436005190" class="text-white"><i class="fab fa-linkedin"></i></a>
-  </div>
-</footer>
+  <!-- Footer -->
+  <footer class="bg-light text-center text-dark py-4 mt-5 border-top">
+    <div class="container">
+      <p class="mb-2">Connect with me:</p>
+      <a href="https://github.com/yourusername" target="_blank" class="text-dark me-3"><i class="fab fa-github fa-lg"></i></a>
+      <a href="https://linkedin.com/in/elphas-wanyonyi-436005190" target="_blank" class="text-dark me-3"><i class="fab fa-linkedin fa-lg"></i></a>
+      <a href="mailto:mulongoelphas97@gmail.com" class="text-dark"><i class="fas fa-envelope fa-lg"></i></a>
+      <p class="mt-3 mb-0">&copy; 2025 Elphas Wanyonyi. All rights reserved.</p>
+    </div>
+  </footer>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Back to Top Button -->
+  <button onclick="topFunction()" id="back-to-top" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Back to Top button
+    const backToTopBtn = document.getElementById("back-to-top");
+
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    }
+
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+
 </body>
 </html>
