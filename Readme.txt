@@ -9,7 +9,7 @@ Welcome to my personal portfolio website! This project showcases my skills, proj
 ## 🌐 Live Demo
 
 You can view the live website here:  
-[Portfolio Live Demo](https://elphazy.github.io) *(replace with your actual GitHub Pages link if different)*
+[Portfolio Live Demo](https://elphazy.github.io)
 
 ---
 
@@ -73,3 +73,4 @@ The website is optimized for mobile, tablet, and desktop views.
 1. Clone the repository:
    ```bash
    git clone https://github.com/Elphazy/elphazy.github.io.git
+
